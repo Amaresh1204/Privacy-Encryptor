@@ -1,0 +1,361 @@
+:root {
+    --page-background: 277deg, 55%, 12%;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:gilroy;
+    color: #fff;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+#main{
+    min-height: 100%;
+    width: 100%;
+    background-color: #111;
+    padding: 100px 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#main>h1{
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+}
+#main>h1 span{
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+#main>h1 span img{
+    height: 40px;
+    rotate: 90deg;
+    transition: 0.3s ease;
+}
+#main #endec-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 8px 8px;
+    width: 28%;
+    margin: 35px 0;
+}
+#endec-div h3{
+    font-size: 17px;
+    display: flex;
+    border-radius: 8px;
+    font-weight: 500;
+    align-items: center;
+    /* background-color: red; */
+    cursor: pointer;
+    padding: 12px 10px;
+    transition: 0.2s ease;
+}
+#enc-btn{
+    background-color: #333;
+}
+#endec-div h3 span{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+#endec-div h3 img{
+    height: 20px;
+}
+#encryption{
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#encryption h5{
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e6e6e;
+    margin-bottom: 13px;
+}
+#encryption textarea{
+    width: 100%;
+    height: 70px;
+    border: 1px solid #343434;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    font-size: 17px;
+    outline: none;
+    background-color: #1C1C1C;
+}
+#encryption input{
+    width: 100%;
+    border: 1px solid #343434;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #1C1C1C;
+}
+
+#encryption button{
+    display: flex;
+    align-items: center;
+    color: #6e6e6e;
+    background-color: #1c1c1c;
+    border: none;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 17px;
+}
+/*Encryption*/
+#encryption button {
+    --text-base: 277deg, 55%, 40%;
+    --text-hover: 307deg, 72%, 86%;
+    --shadow-start: 52deg, 100%, 72%;
+    --shadow-end: 282deg, 90%, 50%;
+    --shadow-inner: 277deg, 90%, 62%;
+    all: unset;
+    color: hsla(var(--text-base), 1);
+    font: 700 1.125rem/1.2 Raleway, sans-serif;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    background: inherit;
+    background-clip: padding-box;
+    border: 2px solid hsla(var(--text-base), 1);
+    border-radius: 2em;
+    cursor: pointer;
+    position: relative;
+    transition: 0.25s ease-out;
+    display:flex;
+  }
+  #encryption button::before, button::after {
+    content: "";
+    border-radius: inherit;
+    transition: inherit;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  #encryption button::before {
+    inset: -0.2em;
+    z-index: -1;
+    background: linear-gradient(hsla(var(--shadow-start), 1), hsla(var(--shadow-end), 1));
+    filter: blur(1.2em) saturate(1.2);
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+  #encryption button::after {
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 4px rgba(255, 255, 255, 0.7), 1px 1px 0 4px #fff;
+    mix-blend-mode: overlay;
+    opacity: 0;
+  }
+  #encryption button:hover, button:focus {
+    color: hsla(var(--text-hover), 1);
+    border-color: transparent;
+    box-shadow: inset 0 1.4em 0 hsla(var(--shadow-inner), 0.1), inset 0 0 1.4em hsla(var(--shadow-inner), 0.32), 0 1px 1px hsla(var(--shadow-inner), 0.32);
+  }
+#encryption button:hover::before, button:hover::after, button:focus::before, button:focus::after {
+    transform: none;
+    opacity: 1;
+  }
+  body,
+button{
+  background: hsla(var(--page-background), 1);
+}
+
+button{
+  padding: 3em;
+  position: relative;
+  z-index: 1;
+}
+
+button span{
+    display: flex;
+    margin-right: 10px;
+}
+button img{
+    height: 20px;
+}
+
+#decryption{
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+
+#decryption h5{
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e6e6e;
+    margin-bottom: 13px;
+}
+#decryption textarea{
+    width: 100%;
+    height: 70px;
+    border: 1px solid #343434;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    font-size: 17px;
+    outline: none;
+    background-color: #1C1C1C;
+}
+#decryption input{
+    width: 100%;
+    border: 1px solid #343434;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #1C1C1C;
+}
+
+#decryption button{
+    display: flex;
+    align-items: center;
+    color: #6e6e6e;
+    background-color: #1C1C1C;
+    border: none;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 17px;
+}
+/*Decryptor*/
+#decryption button {
+    --text-base: 277deg, 55%, 40%;
+    --text-hover: 307deg, 72%, 86%;
+    --shadow-start: 52deg, 100%, 72%;
+    --shadow-end: 282deg, 90%, 50%;
+    --shadow-inner: 277deg, 90%, 62%;
+    all: unset;
+    color: hsla(var(--text-base), 1);
+    font: 700 1.125rem/1.2 Raleway, sans-serif;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    background: inherit;
+    background-clip: padding-box;
+    border: 2px solid hsla(var(--text-base), 1);
+    border-radius: 2em;
+    cursor: pointer;
+    position: relative;
+    transition: 0.25s ease-out;
+    display:flex;
+  }
+  #decryption button::before, button::after {
+    content: "";
+    border-radius: inherit;
+    transition: inherit;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  #decryption button::before {
+    inset: -0.2em;
+    z-index: -1;
+    background: linear-gradient(hsla(var(--shadow-start), 1), hsla(var(--shadow-end), 1));
+    filter: blur(1.2em) saturate(1.2);
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+  #decryption button::after {
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 4px rgba(255, 255, 255, 0.7), 1px 1px 0 4px #fff;
+    mix-blend-mode: overlay;
+    opacity: 0;
+  }
+  #decryption button:hover, button:focus {
+    color: hsla(var(--text-hover), 1);
+    border-color: transparent;
+    box-shadow: inset 0 1.4em 0 hsla(var(--shadow-inner), 0.1), inset 0 0 1.4em hsla(var(--shadow-inner), 0.32), 0 1px 1px hsla(var(--shadow-inner), 0.32);
+  }
+#decryption button:hover::before, button:hover::after, button:focus::before, button:focus::after {
+    transform: none;
+    opacity: 1;
+  }
+  body,
+button{
+  background: hsla(var(--page-background), 1);
+}
+
+button{
+  padding: 3em;
+  position: relative;
+  z-index: 1;
+}
+
+
+button span{
+    display: flex;
+    margin-right: 10px;
+}
+button img{
+    height: 20px;
+}
+
+#result{
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: #1C1C1C;
+    border: 1px solid #343434;
+    width: 45%;
+    display: none;
+    margin-top: 40px;
+}
+center{
+    background-color: #1C1C1C;
+}
+#coverter{
+display: flex;
+    align-items: center;
+    color: #6e6e6e;
+    background-color: #1c1c1c;
+    border: none;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 17px;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+a{
+  text-decoration: none;
+}
+
+
+
+
+
